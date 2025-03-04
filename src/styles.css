@@ -1,0 +1,133 @@
+:root {
+  --primary-text-color: #f3f3f3;
+  --primary-button-bg-color: #6200ea;
+  --primary-button-hover-bg-color: #4500b5;
+  --pure-white-color: #fff;
+  --board-background-color: #2e2e2e;
+  --body-background-color: #1e1e1e;
+  --square-border-color: #444;
+  --square-hover-bg-color: #3e3e3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--body-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--primary-text-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  color: var(--primary-text-color);
+}
+
+.square {
+  background: var(--board-background-color);
+  border: 2px solid var(--square-border-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 3.75rem;
+  width: 3.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.1s ease;
+  margin: 2px;
+}
+
+.square:hover {
+  background-color: var(--square-hover-bg-color);
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.board-row {
+  display: flex;
+}
+
+.status {
+  margin-bottom: 15px;
+  font-size: 1.125rem;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-board {
+  margin-bottom: 1.25rem;
+}
+
+.game-info {
+  padding: 15px;
+  background-color: var(--board-background-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 300px;
+}
+
+ol {
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+button {
+  background: var(--primary-button-bg-color);
+  border: none;
+  color: var(--pure-white-color);
+  padding: 10px 15px;
+  margin: 5px 0;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: var(--primary-button-hover-bg-color);
+}
+
+button:focus {
+  outline: none;
+}
+
+@media (min-width: 768px) {
+  .game {
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+  }
+
+  .game-board {
+    margin-right: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .game-info {
+    width: auto;
+  }
+
+  button {
+    width: auto;
+  }
+}
